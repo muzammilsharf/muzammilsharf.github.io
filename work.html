@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work | Muhammad Muzammil</title>
+<meta name="description" content="Muhammad Muzammil, software engineering student building machine learning pipelines, RAG and LLM systems. Open to work.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;0,500;0,700;0,800;1,800&family=Space+Mono:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js"></script>
+</head>
+<body data-page="work">
+<main class="page"><div class="wrap">
+ <h1 class="ghost">Work</h1>
+ <article class="box">
+  <div class="top2">
+   <div>
+    <h2>Predicting Search Traffic Decay</h2>
+    <p class="meta">FlyRank AI internship. Completed, with a published paper.</p>
+    <p>Content teams cannot check every page. I built a model that ranks pages by their risk of losing Google search traffic, so editors know what to check first. It reads 90 days of a page's history and predicts if the page will decline in the next 30 days.</p>
+    <ul class="chips"><li>Python</li><li>DuckDB</li><li>LightGBM</li><li>scikit-learn</li><li>pandas</li><li>Jupyter</li></ul>
+    <a class="btn" href="https://muzammilsharf.github.io/flyrank-ml-internship/" target="_blank" rel="noopener">Read the paper</a><a class="btn" href="https://github.com/muzammilsharf/flyrank-ml-internship" target="_blank" rel="noopener">View code</a>
+    <p class="url">muzammilsharf.github.io/flyrank-ml-internship<br>github.com/muzammilsharf/flyrank-ml-internship</p>
+   </div>
+   <div>
+    <div class="bars" role="img" aria-label="Precision at 50: baseline 24 percent, model 78.8 percent">
+     <div class="bar-row"><span>Baseline</span><span class="bar" style="--w:24%"><span></span></span><span class="bar-val">24%</span></div>
+     <div class="bar-row"><span>Model</span><span class="bar strong" style="--w:78.8%"><span></span></span><span class="bar-val">78.8%</span></div>
+     <p class="bar-note">Precision on the top 50 pages (average of 5 tests).</p>
+    </div>
+    <div class="stats"><p><strong>78.8M</strong><span>daily rows</span></p><p><strong>357,671</strong><span>page snapshots</span></p><p><strong>36</strong><span>clients</span></p></div>
+   </div>
+  </div>
+ </article>
+ <div class="grid2">
+  <article class="box"><h2>asaninvest</h2><p class="meta">Weekly stock forecasts for the Pakistan Stock Exchange</p>
+   <p>Helps retail investors watch stocks. 4 Random Forest models predict returns 1 to 4 weeks ahead for 24 stocks across 9 sectors (average error 0.048 for 1 week). A FastAPI backend serves them. A daily GitHub Actions job gets new data, retrains and redeploys. I cut the Docker image from 1.59 GB to 837 MB. Now building v2 with more stocks and MLflow tracking.</p>
+   <ul class="chips"><li>Python</li><li>FastAPI</li><li>scikit-learn</li><li>Docker</li><li>GitHub Actions</li><li>Chart.js</li></ul>
+   <a class="btn" href="https://github.com/muzammilsharf/asaninvest" target="_blank" rel="noopener">View on GitHub</a><p class="url">github.com/muzammilsharf/asaninvest</p></article>
+  <article class="box"><h2>AI Morning Briefing Assistant</h2><p class="meta">Voice assistant that speaks Urdu</p>
+   <p>A voice-activated morning assistant. It pulls your daily schedule, the latest news and the local Islamabad weather into one short briefing.</p>
+   <ul class="chips"><li>Python</li></ul>
+   <a class="btn" href="https://github.com/muzammilsharf/AI-Based-Morning-Briefing-Assistant" target="_blank" rel="noopener">View on GitHub</a><p class="url">github.com/muzammilsharf/AI-Based-Morning-Briefing-Assistant</p></article>
+ </div>
+ <p><a href="https://github.com/muzammilsharf?tab=repositories" target="_blank" rel="noopener">See all repositories on GitHub</a></p>
+</div></main>
+</body>
+</html>
