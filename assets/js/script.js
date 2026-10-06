@@ -20,6 +20,26 @@ document.addEventListener("DOMContentLoaded", () => {
     `<button class="yy" id="themeToggle" aria-label="Switch theme">${YY}</button>` +
     (page === "home" ? "" : '<canvas id="stars" aria-hidden="true"></canvas>'));
 
+  // Sidebar (closed by default)
+  const items = [["index", "Home"], ["about", "About"], ["skills", "My Skills"], ["work", "Work"], ["experience", "Experience"], ["contact", "Say hi.."]];
+  const here = (p) => p === page || (p === "index" && page === "home");
+  document.body.insertAdjacentHTML("afterbegin", '<button class="menu" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="side"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 4h2v16H3zM7.5 4h2v16h-2zM12 4h2v16h-2zM16.5 4h2v16h-2zM21 4h1.5v16H21z"/></svg></button>');
+  document.body.insertAdjacentHTML("beforeend",
+    '<div class="scrim" id="scrim"></div><aside class="side" id="side" aria-label="Menu"><button class="side-x" id="sideX" aria-label="Close menu">&times;</button><ul>' +
+    items.map(([p, n]) => `<li><a href="${p}.html"${here(p) ? ' aria-current="page"' : ""}>${n}</a></li>`).join("") +
+    `</ul><div class="side-soc"><a href="https://github.com/muzammilsharf" ${o} aria-label="GitHub">${GH}</a><a href="https://www.linkedin.com/in/muzammilsharf" ${o} aria-label="LinkedIn">${LI}</a><a href="mailto:sharfmuzamil@gmail.com" aria-label="Email">${ML}</a></div><a class="side-mail" href="mailto:sharfmuzamil@gmail.com">sharfmuzamil@gmail.com</a></aside>`);
+  const menuBtn = document.getElementById("menuBtn");
+  const setMenu = (open) => {
+    document.body.classList.toggle("menu-open", open);
+    menuBtn.setAttribute("aria-expanded", open);
+    if (open) document.getElementById("sideX").focus();
+    else if (document.getElementById("side").contains(document.activeElement)) menuBtn.focus();
+  };
+  menuBtn.addEventListener("click", () => setMenu(true));
+  document.getElementById("sideX").addEventListener("click", () => setMenu(false));
+  document.getElementById("scrim").addEventListener("click", () => setMenu(false));
+  addEventListener("keydown", (e) => { if (e.key === "Escape") setMenu(false); });
+
   document.getElementById("themeToggle").addEventListener("click", () => {
     root.dataset.theme = root.dataset.theme === "dark" ? "light" : "dark";
     try { localStorage.setItem("theme", root.dataset.theme); } catch (e) {}
